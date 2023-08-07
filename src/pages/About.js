@@ -3,7 +3,7 @@ import Layout from './../components/layout/Layout'
 
 const About = () => {
   return (
-    <Layout title={"About us - Ecommer app"}>
+    <Layout title={"About us - Nolcstore"}>
       <div className="row contactus ">
         <div className="col-md-6 ">
           <img
@@ -26,5 +26,12 @@ const About = () => {
     </Layout>
   );
 };
+
+Layout.defaultProps = {
+  title: "Nolcstore - shop now",
+  description: "mern stack project",
+  kleywords: "mern,react,node,mongodb",
+  author: "Rose"
+}
 
 export default About;
