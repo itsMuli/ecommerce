@@ -1,8 +1,9 @@
 import React,{useState} from 'react';
 import Layout from "./../../components/layout/Layout";
-import { toast } from 'react-toastify';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import "./../../styles/AuthStyles.css"
 
 const Register = () => {
     const [name,setName] = useState("")
@@ -16,11 +17,15 @@ const Register = () => {
         e.preventDefault();
         try {
             
-            const res = await axios.post(
-                `${process.env.REACT_APP_API}/api/v1/auth/register`,
-                { name, email, password, phone, address}
+            const res = await axios.post('/api/v1/auth/register', { 
+                name, 
+                email, 
+                password, 
+                phone, 
+                address
+            }
             );
-            if(res.data.success){
+            if(res && res.data.success){
                 toast.success(res.data.message)
                 navigate('/login');
             } else {
@@ -31,11 +36,11 @@ const Register = () => {
             toast.error('Something went wrong')
         }
     };
-
+    // console.log(process.env.REACT_APP_API)
   return (
     <Layout title={"Register"}>
-        <div className='register'>
-            <h1>Register</h1>
+        <div className='form-container'>
+            <h1>REGISTER</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <input 
@@ -87,7 +92,7 @@ const Register = () => {
                         placeholder='Address'
                         required/>
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Register</button>
             </form>
 
         </div>
