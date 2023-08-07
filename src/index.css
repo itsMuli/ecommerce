@@ -20,3 +20,13 @@
 .nav-link {
   font-weight: 300 !important;
 }
+
+.active{
+  border-bottom: 1px solid black;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-family: 'roboto', sans-serif;
+  letter-spacing: 3px;
+}

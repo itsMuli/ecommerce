@@ -1,5 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
+import { SiShopee } from "react-icons/si"
 
 const Header = () => {
   return (
@@ -17,10 +18,10 @@ const Header = () => {
     >
       <span className="navbar-toggler-icon" />
     </button>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <NavLink to="/" className="navbar-brand" href="#">
-        Hidden Brand 
-      </NavLink>
+    <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <Link to="/" className="navbar-brand" >
+      <SiShopee/>NOLCSTORE
+      </Link>
       <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
         <li className="nav-item">
           <NavLink 
