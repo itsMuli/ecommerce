@@ -44,7 +44,7 @@ const Login = () => {
   return (
     <Layout title={"Login"}>
         <div className='form-container'>
-            <h1>LOGIN</h1>
+            <h1 className='title'>LOGIN</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <input 
@@ -66,17 +66,21 @@ const Login = () => {
                         placeholder='Password'
                         required />
                 </div>
+                <div className='mb-3'>
                 <button type="submit" className="btn btn-primary">
                     Login
                 </button>
-                <div className='mb-3'>
+                </div>
+                
                 <button 
                     type="button" 
                     className="btn btn-primary"
-                    onClick={() => {navigate('/forgot-password')}}>
+                    onClick={() => {
+                        navigate('/forgot-password')
+                    }}>
                     Forgot Password?
                 </button>
-                </div>
+                
             </form>
 
         </div>
